@@ -6,12 +6,10 @@ namespace ConsoleApp18
     {
         static void Main(string[] args)
         {
-            Weapon w = new Weapon(10,2, 4, true);
-            w.Shoot();
-            w.Fire();
-            w.GetRemainBulletCount();
-            w.Reload();
-
+            
+            
+            Weapon w = new Weapon(30,15,5,"ikili");
+           
             int choise = 0;
             while (choise!=4)
             {
@@ -39,7 +37,11 @@ namespace ConsoleApp18
                             w.Reload();
                         }
                         break;
-                   
+                    case 4:
+                        {
+                            w.GetInfo();
+                        }
+                        break;
                     default:
                         {
 

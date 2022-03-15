@@ -9,19 +9,32 @@ namespace ConsoleApp18.Model
         public int bulletCap;
         public int bulletCount;
         public double time;
-        public bool auto = true;
+        public string auto ;
 
-        public Weapon(int bulletCap, int bulletCount, double time, bool auto)
+        public Weapon()
+        {
+
+        }
+        public Weapon(int bulletCap, int bulletCount, double time, string auto)
         {
             this.bulletCap = bulletCap;
             this.bulletCount = bulletCount;
             this.time = time;
             this.auto = auto;
+            
             if (bulletCount > bulletCap)
             {
                 Console.WriteLine("Xeberdarliq:gulle sayi tutumdan cox ola bilmez");
             }
             
+        }
+        public void GetInfo()
+        {
+            Console.WriteLine($"gulle tutumu:{bulletCap}");
+            Console.WriteLine($"gulle sayi:{bulletCount}");
+            Console.WriteLine($"vaxti:{time}");
+  
+
         }
         public void Shoot()
         {
@@ -31,11 +44,11 @@ namespace ConsoleApp18.Model
             {
                 Console.WriteLine("Gulle yoxdur");
             }
-            else if (auto == true)
+            else if (auto == "ikili")
             {
-                Console.WriteLine("azalir");
+                
                 bulletCount--;
-
+                        
                 if (bulletCount > 0)
                 {
                     bulletCount--;
@@ -47,10 +60,7 @@ namespace ConsoleApp18.Model
                 }
 
             }
-            else
-            {
-                Console.WriteLine("azalir");
-            }
+           
         }
         
         public void Fire()
@@ -61,7 +71,7 @@ namespace ConsoleApp18.Model
                 Console.WriteLine("gulle  yoxdur");
                 return;
             }
-            if (auto)
+            if (auto == "ikili")
             {
 
 
@@ -92,7 +102,9 @@ namespace ConsoleApp18.Model
 
 
             }
+            
         }
+       
     }
 }
     
